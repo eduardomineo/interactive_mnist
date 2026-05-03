@@ -1,5 +1,9 @@
 # Interactive MNIST
 
+I saw a website like this in a video on Instagram, but could not find the source, so I decided to implement it myself as a weekend project.
+
+Live site: https://eduardomineo.github.io/interactive_mnist/
+
 Train a small Keras neural network on MNIST and use it in a static browser UI where drawings are classified live. The model uses two 25-neuron tanh hidden layers. The visualization shows the 28x28 input grid, hidden activations, output probabilities for digits 0-9, and illustrative layer connections.
 
 ## Requirements
