@@ -1,0 +1,92 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f6f8;
+  color: #16181d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.shell {
+  width: min(100%, 1040px);
+  height: 100vh;
+  height: 100dvh;
+  min-height: 720px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.workspace {
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hint {
+  margin: 0 0 12px;
+  color: #515866;
+  font-size: 15px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+canvas {
+  display: block;
+  max-width: 100%;
+  background: #ffffff;
+  border: 1px solid #d8dce3;
+  border-radius: 8px;
+  touch-action: none;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 48px;
+  margin-top: 12px;
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+button {
+  appearance: none;
+  border: 1px solid #16181d;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #16181d;
+  font: inherit;
+  font-weight: 700;
+  padding: 10px 22px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f0f2f5;
+}
+
+#status {
+  min-width: 0;
+  color: #515866;
+  font-size: 14px;
+}
+
+@media (max-height: 719px) {
+  body {
+    overflow: auto;
+  }
+}

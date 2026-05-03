@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interactive MNIST</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <main class="shell">
+      <p class="hint">Draw near the center of the grid and avoid touching the edges.</p>
+      <section class="workspace" aria-label="Interactive MNIST neural network">
+        <canvas id="mnistCanvas" width="960" height="900"></canvas>
+      </section>
+      <div class="toolbar">
+        <button id="clearButton" type="button">Clear</button>
+        <span id="status" role="status">Loading model...</span>
+      </div>
+    </main>
+  </body>
+</html>
