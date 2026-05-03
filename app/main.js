@@ -133,9 +133,14 @@ async function runInference() {
 
   inferenceDirty = false;
   inferenceRunning = true;
-  const input = tf.tensor2d(pixels, [1, PIXEL_COUNT]);
-  const [h1Tensor, h2Tensor, outputTensor] = activationModel.predict(input);
+  let input = null;
+  let h1Tensor = null;
+  let h2Tensor = null;
+  let outputTensor = null;
   try {
+    input = tf.tensor2d(pixels, [1, PIXEL_COUNT]);
+    [h1Tensor, h2Tensor, outputTensor] = activationModel.predict(input);
+
     const [h1Values, h2Values, outputValues] = await Promise.all([
       h1Tensor.data(),
       h2Tensor.data(),
@@ -150,7 +155,7 @@ async function runInference() {
     statusEl.textContent = predictedDigit >= 0 ? `Prediction: ${predictedDigit}` : "Draw a digit";
     render();
   } finally {
-    tf.dispose([input, h1Tensor, h2Tensor, outputTensor]);
+    tf.dispose([input, h1Tensor, h2Tensor, outputTensor].filter(Boolean));
     inferenceRunning = false;
     if (inferenceDirty) {
       scheduleInference();

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import argparse
 import pathlib
 import shutil
@@ -85,6 +87,7 @@ def main() -> None:
     )
     model.load_weights(BEST_WEIGHTS_PATH)
     print(f"loaded best validation-loss weights from {BEST_WEIGHTS_PATH}")
+    BEST_WEIGHTS_PATH.unlink()
 
     loss, accuracy = model.evaluate(x_test, y_test, verbose=0)
     print(f"test_loss={loss:.4f} test_accuracy={accuracy:.4f}")

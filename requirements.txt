@@ -1,7 +1,5 @@
 tensorflow==2.11.0
 tensorflowjs==4.4.0
-tensorflow-decision-forests==1.2.0
-tensorflow-hub>=0.7,<0.13
 jax==0.4.20
 jaxlib==0.4.20
 numpy==1.26.4
